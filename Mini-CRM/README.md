@@ -15,7 +15,7 @@ The Mini CRM helps manage client leads generated from contact forms by providing
 https://araveetimahendra.github.io/FUTURE_FS_02/
 
 👉 **GitHub Repository:**  
-https://github.com/Araveetimahendra/FUTURE_FS_02.git
+https://github.com/ramarajurallabandi/FUTURE_FS_02.git
 
 ---
 
@@ -108,8 +108,8 @@ This project demonstrates **CRUD operations**, **REST API development**, and **M
 
 ## 👨‍💻 Author
 
-**Mahendra Araveeti**  
-B.Tech Student – **Godavari Global University**  
+**Bala Venkata RamaRaju**  
+B.Tech Student – **GIET ENGINEERING COLLEGE**  
 Full Stack Web Development Intern – **Future Interns** 
 
 ---
