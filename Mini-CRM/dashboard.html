@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CRM Dashboard</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f6f8;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: #667eea;
+      color: white;
+    }
+
+    button {
+      background: red;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background: darkred;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Leads Dashboard</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="body"></tbody>
+</table>
+
+<script>
+  function loadLeads() {
+    fetch("http://localhost:5000/api/leads")
+      .then(res => res.json())
+      .then(data => {
+        body.innerHTML = "";
+        data.forEach(lead => {
+          body.innerHTML += `
+            <tr id="row-${lead._id}">
+              <td>${lead.name}</td>
+              <td>${lead.email}</td>
+              <td>${lead.phone}</td>
+              <td>${lead.address}</td>
+              <td>
+                <button onclick="deleteLead('${lead._id}')">Delete</button>
+              </td>
+            </tr>
+          `;
+        });
+      });
+  }
+
+  function deleteLead(id) {
+    if (!confirm("Delete this lead?")) return;
+
+    fetch("http://localhost:5000/api/leads/" + id, {
+      method: "DELETE"
+    })
+    .then(() => {
+      // 🔥 remove row instantly
+      document.getElementById("row-" + id).remove();
+    });
+  }
+
+  loadLeads();
+</script>
+
+</body>
+</html>
