@@ -9,11 +9,6 @@ The Mini CRM helps manage client leads generated from contact forms by providing
 
 ---
 
-## 🔗 Live Website
-
-👉 **Live Demo:**  
-https://araveetimahendra.github.io/FUTURE_FS_02/
-
 👉 **GitHub Repository:**  
 https://github.com/ramarajurallabandi/FUTURE_FS_02.git
 
